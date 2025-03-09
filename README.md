@@ -1,6 +1,6 @@
 <div align=center>
   
-# *TaylorSeer*: Accelerating Diffusion Transformers with *To*ken-wise Feature *Ca*ching
+# *TaylorSeer*: From Reusing to Forecasting: Accelerating Diffusion Models with *TaylorSeers*
 
 <p>
 <a href='https://arxiv.org/abs/2410.05317'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
