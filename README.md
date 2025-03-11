@@ -54,7 +54,18 @@ TaylorSeer achieved a lossless computational compression of 2.77 $\times$ on the
 - Thanks to [ImageReward](https://github.com/THUDM/ImageReward) for Text-to-Image quality evaluation.
 - Thanks to [VBench](https://github.com/Vchitect/VBench) for Text-to-Video quality evaluation.
 
+## 📌 Citation
+
+```bibtex
+@article{TaylorSeer2025,
+  title={From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers},
+  author={Liu, Jiacheng and Zou, Chang and Lyu, Yuanhuiyi and Chen, Junjie and Zhang, Linfeng},
+  journal={arXiv preprint arXiv:2503.06923},
+  year={2025}
+}
+```
 
 ## :e-mail: Contact
 
 If you have any questions, please email [`shenyizou@outlook.com`](mailto:shenyizou@outlook.com).
+
