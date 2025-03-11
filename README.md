@@ -35,7 +35,7 @@ git clone https://github.com/Shenyi-Z/TaylorSeer.git
 
 ## TaylorSeer-FLUX
 
-TaylorSeer achieved a lossless computational compression of 4.99$\times$ and a Latency Speedup of 3.53$\times$ on FLUX.1-dev, as measured by [ImageReward](https://github.com/THUDM/ImageReward) for comprehensive quality. To run TaylorSeer-FLUX, see [TaylorSeer-FLUX](TaylorSeer-FLUX.md).
+TaylorSeer achieved a lossless computational compression of 4.99 $\times$ and a Latency Speedup of 3.53 $\times$ on FLUX.1-dev, as measured by [ImageReward](https://github.com/THUDM/ImageReward) for comprehensive quality. To run TaylorSeer-FLUX, see [TaylorSeer-FLUX](TaylorSeer-FLUX.md).
 
 ## TaylorSeer-HunyuanVideo
 
