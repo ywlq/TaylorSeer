@@ -3,10 +3,10 @@
 # *TaylorSeer*: From Reusing to Forecasting: Accelerating Diffusion Models with *TaylorSeers*
 
 <p>
-<a href='https://arxiv.org/abs/2410.05317'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
+<a href='https://arxiv.org/abs/2503.06923'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
 <a href='https://taylorseer.github.io/TaylorSeer/'><img src='https://img.shields.io/badge/Project-Page-blue'></a>
 </p>
-(Paper will be available soon...)
+
 </div>
 
 ## 🔥 News
