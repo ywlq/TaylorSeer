@@ -30,7 +30,7 @@ Set your desired class ID in `TaylorSeer-DiT/sample.py`.
 Run the inference with the recommended settings:
 
 ```bash
-python sample.py --ddim-sample --interval 4 --max-order 4
+python sample.py --ddim-sample --num-sampling-steps 50 --interval 4 --max-order 4 
 ```
 
 #### Distributed Data Parallel (DDP) Inference
@@ -41,7 +41,8 @@ torchrun --nnodes=1 --nproc_per_node=8 sample_ddp.py \
   --per-proc-batch-size 50 \
   --image-size 256 \
   --cfg-scale 1.5 \
-  --num-sampling-steps 250 \
+  --ddim-sample \
+  --num-sampling-steps 50 \
   --interval 4 \
   --max-order 4 \
   --num-fid-samples 50000
