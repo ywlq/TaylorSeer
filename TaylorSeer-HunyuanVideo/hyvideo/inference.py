@@ -53,6 +53,7 @@ def parallelize_transformer(pipe):
         freqs_sin: Optional[torch.Tensor] = None,
         guidance: torch.Tensor = None,  # Guidance for modulation, should be cfg_scale x 1000.
         return_dict: bool = True,
+        **kwargs,
     ):
         if x.shape[-2] // 2 % get_sequence_parallel_world_size() == 0:
             # try to split x by height
@@ -92,6 +93,7 @@ def parallelize_transformer(pipe):
             freqs_sin,
             guidance,
             return_dict,
+            **kwargs,
         )
 
         return_dict = not isinstance(output, tuple)
