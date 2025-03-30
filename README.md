@@ -12,7 +12,7 @@
 ## 🔥 News
 
 * `2025/03/30` 🚀🚀 TaylorSeer for Wan2.1 is released.
-* 
+
 * `2025/03/30` 🚀🚀 The Diffusers inference scripts for TaylorSeers and the xDiT scripts applicable for multi-GPU parallel inference have been officially released.
 
 * `2025/03/10` 🚀🚀 Our latest work "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers" is released! Codes are available at [TaylorSeer](https://github.com/Shenyi-Z/TaylorSeer)! TaylorSeer supports lossless compression at a rate of 4.99x on FLUX.1-dev (with a latency speedup of 3.53x) and high-quality acceleration at a compression rate of 5.00x on HunyuanVideo (with a latency speedup of 4.65x)! We hope *TaylorSeer* can move the paradigm of feature caching methods from reusing to forecasting.For more details, please refer to our latest research paper.
@@ -64,6 +64,7 @@ We implemented the TaylorSeer acceleration method on Wan2.1, with support for mu
 - Thanks to [DiT](https://github.com/facebookresearch/DiT) for their great work and codebase upon which we build TaylorSeer-DiT.
 - Thanks to [FLUX](https://github.com/black-forest-labs/flux) for their great work and codebase upon which we build TaylorSeer-FLUX.
 - Thanks to [HunyuanVideo](https://github.com/Tencent/HunyuanVideo) for their great work and codebase upon which we build TaylorSeer-HunyuanVideo.
+- Thanks to [Wan2.1](https://github.com/Wan-Video/Wan2.1) for their great work and codebase upon which we build TaylorSeer-Wan2.1.
 - Thanks to [ImageReward](https://github.com/THUDM/ImageReward) for Text-to-Image quality evaluation.
 - Thanks to [VBench](https://github.com/Vchitect/VBench) for Text-to-Video quality evaluation.
 
