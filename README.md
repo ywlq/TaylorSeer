@@ -11,6 +11,10 @@
 
 ## 🔥 News
 
+* `2025/03/30` 🚀🚀 TaylorSeer for Wan2.1 is released.
+* 
+* `2025/03/30` 🚀🚀 The Diffusers inference scripts for TaylorSeers and the xDiT scripts applicable for multi-GPU parallel inference have been officially released.
+
 * `2025/03/10` 🚀🚀 Our latest work "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers" is released! Codes are available at [TaylorSeer](https://github.com/Shenyi-Z/TaylorSeer)! TaylorSeer supports lossless compression at a rate of 4.99x on FLUX.1-dev (with a latency speedup of 3.53x) and high-quality acceleration at a compression rate of 5.00x on HunyuanVideo (with a latency speedup of 4.65x)! We hope *TaylorSeer* can move the paradigm of feature caching methods from reusing to forecasting.For more details, please refer to our latest research paper.
 * `2025/02/19` 🚀🚀 ToCa solution for **FLUX** has been officially released after adjustments, now achieving up to **3.14× lossless acceleration** (in FLOPs)!
 * `2025/01/22` 💥💥 ToCa is honored to be accepted by ICLR 2025!
@@ -37,13 +41,22 @@ git clone https://github.com/Shenyi-Z/TaylorSeer.git
 
 TaylorSeer achieved a lossless computational compression of 4.99 $\times$ and a Latency Speedup of 3.53 $\times$ on FLUX.1-dev, as measured by [ImageReward](https://github.com/THUDM/ImageReward) for comprehensive quality. To run TaylorSeer-FLUX, see [TaylorSeer-FLUX](TaylorSeer-FLUX.md).
 
+Besides, We have provided examples of inference scripts for the **diffusers version**, as well as multi-GPU parallel **xDiT inference scripts**. You can also conduct tests based on them, located at [TaylorSeers-Diffusers](./TaylorSeers-Diffusers ) and [TaylorSeers-xDiT](./TaylorSeers-xDiT) respectively.
+
 ## TaylorSeer-HunyuanVideo
 
 TaylorSeer achieved a computational compression of 5.00 $\times$ and a remarkable Latency Speedup of 4.65 $\times$ on HunyuanVideo, as comprehensively measured by the [VBench](https://github.com/Vchitect/VBench) metric. Compared to previous methods, it demonstrated significant improvements in both acceleration efficiency and quality. To run TaylorSeer-HunyuanVideo, see [TaylorSeer-HunyuanVideo](TaylorSeer-HunyuanVideo.md).
 
+In addition, our scripts also support multi-GPU parallel acceleration implemented by HunyuanVideo using xDiT. In this case, the acceleration effect brought by the cache and the acceleration effect of multi-GPU parallelism are independent of each other and multiply, achieving extremely high acceleration effects.
+
 ## TayorSeer-DiT
 
 TaylorSeer achieved a lossless computational compression of 2.77 $\times$ on the base model DiT, as comprehensively evaluated by metrics such as FID. Its performance across various acceleration ratios significantly surpassed previous methods. For instance, in an extreme scenario with a 4.53 $\times$ compression ratio, TaylorSeer's FID only increased by 0.33 from the non-accelerated baseline of 2.32, reaching 2.65, while ToCa and DuCa exhibited FID scores above 6.0 under the same conditions. To run TaylorSeer-DiT,see [TaylorSeer-DiT](TaylorSeer-DiT.md).
+
+## TaylorSeer-Wan2.1
+
+We implemented the TaylorSeer acceleration method on Wan2.1, with support for multi-GPU parallel inference. The installation and inference commands for TaylorSeer-Wan2.1 are fully compatible with those of Wan2.1. To run TaylorSeer-Wan2.1, see [TaylorSeer-Wan2.1](TaylorSeer-Wan2.1.md).
+
 
 
 ## 👍 Acknowledgements

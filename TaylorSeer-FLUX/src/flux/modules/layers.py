@@ -324,6 +324,9 @@ class DoubleStreamBlock(nn.Module):
             elif current['type'] == 'FORA':
                 img_mod1, img_mod2 = self.img_mod(vec)
                 txt_mod1, txt_mod2 = self.txt_mod(vec)
+                
+                img = img + img_mod1.gate * cache_dic['cache'][-1]['double_stream'][current['layer']]['img_attn'][0]
+                txt = txt + txt_mod1.gate * cache_dic['cache'][-1]['double_stream'][current['layer']]['txt_attn'][0]
                 img = img + img_mod2.gate * cache_dic['cache'][-1]['double_stream'][current['layer']]['img_mlp'][0]
                 txt = txt + txt_mod2.gate * cache_dic['cache'][-1]['double_stream'][current['layer']]['txt_mlp'][0]
             
