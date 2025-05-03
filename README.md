@@ -32,6 +32,12 @@
 
 </details>
 
+## 🧩 Community Contributions
+
+Thanks to all the open-source contributors for their strong support! We’d love to hear from you!
+
+* ComfyUI-TaylorSeer-philipy1219 (FP8 Inference on FLUX, more video models coming): [ComfyUI-TaylorSeer-philipy1219](https://github.com/philipy1219/ComfyUI-TaylorSeer) by [philipy1219](https://github.com/philipy1219).
+
 ## 🛠 Installation
 
 ``` cmd
