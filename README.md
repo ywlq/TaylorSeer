@@ -11,6 +11,8 @@
 
 ## 🔥 News
 
+* `2025/05/03` 🚀🚀 TaylorSeer for HiDream is released.
+
 * `2025/03/30` 🚀🚀 TaylorSeer for Wan2.1 is released.
 
 * `2025/03/30` 🚀🚀 The Diffusers inference scripts for TaylorSeers and the xDiT scripts applicable for multi-GPU parallel inference have been officially released.
@@ -57,16 +59,21 @@ TaylorSeer achieved a lossless computational compression of 2.77 $\times$ on the
 
 We implemented the TaylorSeer acceleration method on Wan2.1, with support for multi-GPU parallel inference. The installation and inference commands for TaylorSeer-Wan2.1 are fully compatible with those of Wan2.1. To run TaylorSeer-Wan2.1, see [TaylorSeer-Wan2.1](TaylorSeer-Wan2.1.md).
 
+## TaylorSeer-HiDream
+
+The recently open-sourced image generation model **HiDream**, despite its impressive output quality, faces increasing demands for acceleration due to its longer inference time. We applied **TaylorSeer** to accelerate HiDream’s inference, achieving a **72% reduction in runtime**. For more details, see [TaylorSeer-HiDream](TaylorSeer-HiDream.md).
 
 
 ## 👍 Acknowledgements
 
 - Thanks to [DiT](https://github.com/facebookresearch/DiT) for their great work and codebase upon which we build TaylorSeer-DiT.
 - Thanks to [FLUX](https://github.com/black-forest-labs/flux) for their great work and codebase upon which we build TaylorSeer-FLUX.
+- Thanks to [HiDream](https://github.com/HiDream-ai/HiDream-I1) for their great work and codebase upon which we build TaylorSeer-HiDream.
 - Thanks to [HunyuanVideo](https://github.com/Tencent/HunyuanVideo) for their great work and codebase upon which we build TaylorSeer-HunyuanVideo.
 - Thanks to [Wan2.1](https://github.com/Wan-Video/Wan2.1) for their great work and codebase upon which we build TaylorSeer-Wan2.1.
 - Thanks to [ImageReward](https://github.com/THUDM/ImageReward) for Text-to-Image quality evaluation.
 - Thanks to [VBench](https://github.com/Vchitect/VBench) for Text-to-Video quality evaluation.
+
 
 ## 📌 Citation
 
