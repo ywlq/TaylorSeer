@@ -69,7 +69,6 @@ We implemented the TaylorSeer acceleration method on Wan2.1, with support for mu
 
 The recently open-sourced image generation model **HiDream**, despite its impressive output quality, faces increasing demands for acceleration due to its longer inference time. We applied **TaylorSeer** to accelerate HiDream’s inference, achieving a **72% reduction in runtime**. For more details, see [TaylorSeer-HiDream](TaylorSeer-HiDream.md).
 
-
 ## 👍 Acknowledgements
 
 - Thanks to [DiT](https://github.com/facebookresearch/DiT) for their great work and codebase upon which we build TaylorSeer-DiT.
