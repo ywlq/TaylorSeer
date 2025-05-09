@@ -38,8 +38,8 @@ HiDream requires Llama-3.1-8B, which you need to request access for. Once you ha
 
 ```bash
 # Option 1: Using huggingface-cli
-huggingface-cli download --resume-download meta-llama/Llama-3.1-8B-Instruct \
-                         --local-dir meta-llama/Llama-3.1-8B-Instruct
+huggingface-cli download --resume-download meta-llama/Llama-3.1-8B \
+                         --local-dir meta-llama/Llama-3.1-8B
 
 # Option 2: Using modelscope
 modelscope download --model LLM-Research/Meta-Llama-3.1-8B
@@ -97,3 +97,43 @@ The following results are based on evaluations conducted on an **H20 device**:
 | TaylorSeer-HiDream | 21s /img   | 1.106              |
 
 TaylorSeer optimization reduces generation time by approximately 72% (from 76s to 21s per image) while maintaining comparable quality metrics on the DrawBench200 benchmark.
+
+
+
+### 6. Start with TaylorSeer-HiDream-I1-Fast-nf4
+
+This section explains how to launch TaylorSeer-HiDream using the nf4 quantized model versions. These models are optimized for reduced memory and computation requirements, making them suitable for resource-constrained environments.(A 24GB GPU should be sufficient to run it.)
+
+#### Download nf4 Weights
+
+```bash
+# Dev version
+huggingface-cli download --resume-download azaneko/HiDream-I1-Dev-nf4 --local-dir /root/autodl-tmp/pretrained_models/azaneko/HiDream-I1-Dev-nf4
+
+# Fast version
+huggingface-cli download --resume-download azaneko/HiDream-I1-Fast-nf4 --local-dir /root/autodl-tmp/pretrained_models/azaneko/HiDream-I1-Fast-nf4
+
+# Full version
+huggingface-cli download --resume-download azaneko/HiDream-I1-Full-nf4 --local-dir /root/autodl-tmp/pretrained_models/azaneko/HiDream-I1-Full-nf4
+
+#Download Quantized LLaMA Model (INT4)
+huggingface-cli download --resume-download hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 --local-dir /root/autodl-tmp/pretrained_models/hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4
+```
+
+#### Install hdi1 Inference Package
+The nf4 models require the hdi1 inference library, which depends on flash-attn. If you've already installed the base requirements.txt for HiDream, it's recommended to reuse the same Conda environment and install hdi1 as follows:
+```bash
+pip install hdi1 --no-build-isolation
+```
+Note: This may recompile parts of flash-attn, so ensure your environment is properly configured.
+
+#### Quick Inference Example
+You can quickly generate images using the CLI provided by hdi1. Here’s a sample command:
+```bash
+python -m hdi1 "A cat holding a sign that says 'hello world'" -m fast
+```
+The -m fast flag specifies the HiDream-I1-Fast-nf4 model.
+
+Replace the prompt with your own text to generate different images.
+
+
