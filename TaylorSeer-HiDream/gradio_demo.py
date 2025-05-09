@@ -7,7 +7,8 @@ from hi_diffusers.schedulers.flash_flow_match import FlashFlowMatchEulerDiscrete
 from transformers import LlamaForCausalLM, PreTrainedTokenizerFast
 
 MODEL_PREFIX = "HiDream-ai"
-LLAMA_MODEL_NAME = "/root/autodl-tmp/pretrained_models/Meta-Llama-3.1-8B"
+#LLAMA_MODEL_NAME = "/root/autodl-tmp/pretrained_models/Meta-Llama-3.1-8B" # Hard Coded path for local loading
+LLAMA_MODEL_NAME = "meta-llama/Llama-3.1-8B"
 
 # Model configurations
 MODEL_CONFIGS = {
@@ -19,7 +20,8 @@ MODEL_CONFIGS = {
         "scheduler": FlashFlowMatchEulerDiscreteScheduler
     },
     "full": {
-        "path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Full',
+        #"path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Full', # Hard Coded path for local loading
+        "path": 'HiDream-ai/HiDream-I1-Full',
         "guidance_scale": 5.0,
         "num_inference_steps": 50,
         "shift": 3.0,

@@ -80,8 +80,8 @@ python sampling.py --prompt_file </path/to/your/test/prompt.txt> \
 We tested TaylorSeer-HiDream on the DrawBench200 benchmark. Here's an example of how to run the test:
 
 ```bash
-python sampling.py --prompt_file /root/autodl-tmp/prompts/DrawBench200.txt \
-                   --output_dir /root/autodl-tmp/samples/taylorN4O1 \
+python sampling.py --prompt_file /path/to/your/prompts/DrawBench200.txt \
+                   --output_dir /path/to/your/generated/samples/folder \
                    --add_sampling_metadata
 ```
 

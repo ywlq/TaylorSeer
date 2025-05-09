@@ -44,7 +44,7 @@ def main(opts: SamplingOptions):
     if opts.use_nsfw_filter:
         nsfw_classifier = pipeline(
             "image-classification",
-            model="/root/autodl-tmp/pretrained_models/Falconsai/nsfw_image_detection",
+            model="Falconsai/nsfw_image_detection",
             device=device
         )
     else:
@@ -189,7 +189,7 @@ def app():
     parser.add_argument('--num_images_per_prompt', type=int, default=1, help='Number of images per prompt.')
     parser.add_argument('--batch_size', type=int, default=1, help='Batch size (prompt batching).')
     parser.add_argument('--model_name', type=str, default='flux-schnell', choices=['flux-dev', 'flux-schnell'], help='Model name.')
-    parser.add_argument('--output_dir', type=str, default='/root/autodl-tmp/samples', help='Directory to save images.')
+    parser.add_argument('--output_dir', type=str, default='./samples', help='Directory to save images.')
     parser.add_argument('--add_sampling_metadata', action='store_true', help='Whether to add prompt metadata to images.')
     parser.add_argument('--use_nsfw_filter', action='store_true', help='Enable NSFW filter.')
     parser.add_argument('--test_FLOPs', action='store_true', help='Test inference computation cost.')

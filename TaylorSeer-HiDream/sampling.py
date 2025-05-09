@@ -33,14 +33,16 @@ class SamplingOptions:
 # Model configuration
 MODEL_CONFIGS = {
     "dev": {
-        "path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Dev',
+        #"path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Dev', # Hard Coded path for local loading
+        "path": 'HiDream-ai/HiDream-I1-Dev',
         "guidance_scale": 0.0,
         "num_inference_steps": 28,
         "shift": 6.0,
         "scheduler": FlashFlowMatchEulerDiscreteScheduler
     },
     "full": {
-        "path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Full',
+        #"path": '/root/autodl-tmp/pretrained_models/HiDream-ai/HiDream-I1-Full', # Hard Coded path for local loading
+        "path": 'HiDream-ai/HiDream-I1-Full',
         "guidance_scale": 5.0,
         "num_inference_steps": 50,
         "shift": 3.0,
@@ -56,7 +58,8 @@ MODEL_CONFIGS = {
 }
 
 
-LLAMA_MODEL_NAME = "/root/autodl-tmp/pretrained_models/Meta-Llama-3.1-8B"
+#LLAMA_MODEL_NAME = "/root/autodl-tmp/pretrained_models/Meta-Llama-3.1-8B" # Hard Coded path for local loading
+LLAMA_MODEL_NAME = "meta-llama/Llama-3.1-8B"  # Hugging Face Hub loading
 NSFW_THRESHOLD = 0.85  # NSFW score threshold
 
 
@@ -126,7 +129,7 @@ def main(opts: SamplingOptions):
             from transformers import pipeline
             nsfw_classifier = pipeline(
                 "image-classification",
-                model="/root/autodl-tmp/pretrained_models/Falconsai/nsfw_image_detection",
+                model="Falconsai/nsfw_image_detection",
                 device=device
             )
         except Exception as e:
