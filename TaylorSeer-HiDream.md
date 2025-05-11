@@ -91,7 +91,7 @@ TaylorSeer-HiDream demonstrates significant performance improvements:
 
 The following results are based on evaluations conducted on an **H20 device**:
 
-| Model              | Generation Time | DrawBench200 Score |
+| Model              | Generation Time | DrawBench200 ImageReward |
 | ------------------ | --------------- | ------------------ |
 | Original           | 76s /img   | 1.184              |
 | TaylorSeer-HiDream | 21s /img   | 1.106              |
