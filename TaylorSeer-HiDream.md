@@ -90,6 +90,7 @@ python sampling.py --prompt_file /path/to/your/prompts/DrawBench200.txt \
 TaylorSeer-HiDream demonstrates significant performance improvements:
 
 The following results are based on evaluations conducted on an **H20 device**:
+<img width="822" alt="image" src="https://github.com/user-attachments/assets/0bdac5d5-3c5d-40d6-af53-89e6b9239d47" />
 
 | Model              | Generation Time | DrawBench200 ImageReward |
 | ------------------ | --------------- | ------------------ |
@@ -135,5 +136,33 @@ python -m hdi1 "A cat holding a sign that says 'hello world'" -m fast
 The -m fast flag specifies the HiDream-I1-Fast-nf4 model.
 
 Replace the prompt with your own text to generate different images.
+
+
+
+
+
+## TaylorSeer vs. Original HiDream: Key Differences
+The main architectural difference between TaylorSeer-HiDream and the original HiDream repository lies in the addition of two new modules:
+
+1. taylor_utils/
+This module implements Taylor series-based prediction for efficient inference. It manages:
+
+Cache step prediction using different orders of Taylor approximation.
+
+Dynamic adjustment of cache updates during inference to optimize performance.
+
+The core idea is to reuse computation across time steps using Taylor expansion, significantly reducing redundant operations.
+
+2. cache_functions/
+This module handles the initialization and configuration of the cache system, which enables the TaylorSeer optimizations. In particular:
+
+cache_init.py defines the cache structure and its parameters:
+
+```bash
+cache_dic['fresh_threshold'] = 4  # Determines after how many steps the cache should be refreshed
+cache_dic['max_order'] = 1        # Specifies the maximum order of Taylor approximation used
+```
+
+These settings govern when to recompute or reuse previous computations, striking a balance between speed and accuracy.
 
 
