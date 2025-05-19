@@ -31,10 +31,8 @@ torchrun --nproc_per_node=8 taylorseer_generate.py \
 ```bash
 python taylorseer_generate.py \
 --task t2v-1.3B \
---size 1280*720 \
+--size 832*480 \
 --ckpt_dir ./Wan2.1-T2V-1.3B \
---dit_fsdp --t5_fsdp \
---ulysses_size 8 \
 --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage."
 ```
 
