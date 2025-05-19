@@ -90,12 +90,9 @@ python sampling.py --prompt_file /path/to/your/prompts/DrawBench200.txt \
 TaylorSeer-HiDream demonstrates significant performance improvements:
 
 The following results are based on evaluations conducted on an **H20 device**:
+
 <img width="822" alt="image" src="https://github.com/user-attachments/assets/0bdac5d5-3c5d-40d6-af53-89e6b9239d47" />
 
-| Model              | Generation Time | DrawBench200 ImageReward |
-| ------------------ | --------------- | ------------------ |
-| Original           | 76s /img   | 1.184              |
-| TaylorSeer-HiDream | 21s /img   | 1.106              |
 
 TaylorSeer optimization reduces generation time by approximately 72% (from 76s to 21s per image) while maintaining comparable quality metrics on the DrawBench200 benchmark.
 
@@ -145,6 +142,7 @@ Replace the prompt with your own text to generate different images.
 The main architectural difference between TaylorSeer-HiDream and the original HiDream repository lies in the addition of two new modules:
 
 1. taylor_utils/
+
 This module implements Taylor series-based prediction for efficient inference. It manages:
 
 Cache step prediction using different orders of Taylor approximation.
@@ -154,6 +152,7 @@ Dynamic adjustment of cache updates during inference to optimize performance.
 The core idea is to reuse computation across time steps using Taylor expansion, significantly reducing redundant operations.
 
 2. cache_functions/
+
 This module handles the initialization and configuration of the cache system, which enables the TaylorSeer optimizations. In particular:
 
 cache_init.py defines the cache structure and its parameters:
