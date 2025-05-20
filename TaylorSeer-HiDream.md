@@ -91,14 +91,9 @@ TaylorSeer-HiDream demonstrates significant performance improvements:
 
 The following results are based on evaluations conducted on an **H20 device**:
 
-| Model              | Generation Time | DrawBench200 Score |
-| ------------------ | --------------- | ------------------ |
-| Original           | 76s /img   | 1.184              |
-| TaylorSeer-HiDream | 21s /img   | 1.106              |
+<img width="822" alt="image" src="https://github.com/user-attachments/assets/0bdac5d5-3c5d-40d6-af53-89e6b9239d47" />
 
 TaylorSeer optimization reduces generation time by approximately 72% (from 76s to 21s per image) while maintaining comparable quality metrics on the DrawBench200 benchmark.
-
-
 
 ### 6. Start with TaylorSeer-HiDream-I1-Fast-nf4
 
@@ -121,19 +116,50 @@ huggingface-cli download --resume-download hugging-quants/Meta-Llama-3.1-8B-Inst
 ```
 
 #### Install hdi1 Inference Package
+
 The nf4 models require the hdi1 inference library, which depends on flash-attn. If you've already installed the base requirements.txt for HiDream, it's recommended to reuse the same Conda environment and install hdi1 as follows:
+
 ```bash
 pip install hdi1 --no-build-isolation
 ```
+
 Note: This may recompile parts of flash-attn, so ensure your environment is properly configured.
 
 #### Quick Inference Example
+
 You can quickly generate images using the CLI provided by hdi1. Here’s a sample command:
+
 ```bash
 python -m hdi1 "A cat holding a sign that says 'hello world'" -m fast
 ```
+
 The -m fast flag specifies the HiDream-I1-Fast-nf4 model.
 
 Replace the prompt with your own text to generate different images.
 
+## TaylorSeer vs. Original HiDream: Key Differences
 
+The main architectural difference between TaylorSeer-HiDream and the original HiDream repository lies in the addition of two new modules:
+
+1. taylor_utils/
+
+This module implements Taylor series-based prediction for efficient inference. It manages:
+
+Cache step prediction using different orders of Taylor approximation.
+
+Dynamic adjustment of cache updates during inference to optimize performance.
+
+The core idea is to reuse computation across time steps using Taylor expansion, significantly reducing redundant operations.
+
+2. cache_functions/
+
+This module handles the initialization and configuration of the cache system, which enables the TaylorSeer optimizations. In particular:
+
+cache_init.py defines the cache structure and its parameters:
+
+```bash
+cache_dic['fresh_threshold'] = 4  # Determines after how many steps the cache should be refreshed
+cache_dic['max_order'] = 1        # Specifies the maximum order of Taylor approximation used
+```
+
+These settings govern when to recompute or reuse previous computations, striking a balance between speed and accuracy.
