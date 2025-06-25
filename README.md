@@ -1,6 +1,6 @@
 <div align=center>
   
-# *TaylorSeer*: From Reusing to Forecasting: Accelerating Diffusion Models with *TaylorSeers*
+# [ICCV 2025] *TaylorSeer*: From Reusing to Forecasting: Accelerating Diffusion Models with *TaylorSeers*
 
 <p>
 <a href='https://arxiv.org/abs/2503.06923'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
@@ -10,6 +10,8 @@
 </div>
 
 ## 🔥 News
+
+* `2025/06/26` 💥💥 TaylorSeer is honored to be accepted by ICCV 2025!
 
 * `2025/05/03` 🚀🚀 TaylorSeer for HiDream is released.
 
