@@ -97,3 +97,6 @@ The recently open-sourced image generation model **HiDream**, despite its impres
 
 If you have any questions, please email [`shenyizou@outlook.com`](mailto:shenyizou@outlook.com).
 
+## :star: Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Shenyi-Z/TaylorSeer&type=Date)](https://www.star-history.com/#Shenyi-Z/TaylorSeer&Date)
