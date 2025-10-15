@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "HunyuanVideo Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/TaylorSeer-HunyuanVideo/sample_video.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/TaylorSeer-HunyuanVideo",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "7",
+                "MODEL_BASE": "/mnt/42_store/xj/HunyuanVideo/ckpts"
+            },
+            "args": [
+                "--video-size", "480", "640",
+                "--video-length", "65",
+                "--infer-steps", "50",
+                "--seed", "42",
+                "--prompt", "A cat walks on the grass, realistic style.",
+                "--flow-reverse",
+                "--use-cpu-offload",
+                "--save-path", "/mnt/42_store/xj/TaylorSeer/TaylorSeer-HunyuanVideo/videos",
+                "--model-base", "/mnt/42_store/xj/HunyuanVideo/ckpts",
+                "--dit-weight", "/mnt/42_store/xj/HunyuanVideo/ckpts/hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states.pt"
+            ],
+            "python": "/mnt/42_store/xj/anaconda3/envs/Hunyuan-taylor/bin/python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "subProcess": true
+        }
+    ]
+}
