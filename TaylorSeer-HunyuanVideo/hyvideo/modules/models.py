@@ -300,7 +300,7 @@ class MMDoubleStreamBlock(nn.Module):
             # Calculate the img bloks.
             current['module'] = 'img_attn'
 
-            img = img + apply_gate(taylor_formula(cache_dic, current), gate=img_mod1_gate)
+            img = img + apply_gate(taylor_formula(cache_dic, current), gate=img_mod1_gate) # 用之前cache的m阶差分来进行泰勒展开预测当前步的输入
 
             current['module'] = 'img_mlp'
 

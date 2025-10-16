@@ -9,7 +9,7 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/TaylorSeer-HunyuanVideo",
             "env": {
-                "CUDA_VISIBLE_DEVICES": "7",
+                "CUDA_VISIBLE_DEVICES": "1",
                 "MODEL_BASE": "/mnt/42_store/xj/HunyuanVideo/ckpts"
             },
             "args": [
